@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 app.get("/getemails", async (req, res) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  const fileContent = await fs.readFile("./data/getEmails.json", "utf-8");
+  const fileContent = await fs.readFile("./data/getemails.json", "utf-8");
 
   const emailDate = JSON.parse(fileContent);
 
