@@ -1,0 +1,50 @@
+[
+  {
+    "emailId": "e1",
+    "emailTo": ["jSmith@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "John Smith"
+  },
+  {
+    "emailId": "e2",
+    "emailTo": ["mRobers@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "Mary Roberts"
+  },
+  {
+    "emailId": "e3",
+    "emailTo": ["tWroblynski@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "Tom Wroblynski"
+  },
+  {
+    "emailId": "e4",
+    "emailTo": ["bTipier@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "Byron Tipier"
+  },
+  {
+    "emailId": "e5",
+    "emailTo": ["jSeymoreh@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "Jane Seymore"
+  },
+  {
+    "emailId": "e6",
+    "emailTo": ["bSkipper@fake.com"],
+    "emailCC": ["bRoberts@fake.com", "fJohnson@fale.com"],
+    "emailSubject": "Meeting of the minds",
+    "emailBody": "We need to meet to discuss the new project.  Please let me know when you are available.",
+    "emailSignature": "Bethany Skipper"
+  }
+]
