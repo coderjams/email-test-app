@@ -26,12 +26,9 @@
       <div>
         <label for="cars">Choose an email:</label>
         <select name="userEmail" id="userEmail">
-          <option value="e1">John Smith</option>
-          <option value="e2">Mary Roberts</option>
-          <option value="e3s">Tom Wroblynski</option>
-          <option value="e4">Byron Tipier</option>
-          <option value="e5">Jane Seymore</option>
-          <option value="e6">Bethany Skipper</option>
+          @for(email of emails(); track email.id) {
+            <option [value]="email.signature">{{email.signature}}</option>
+          }
         </select>
       </div>
     </div>
