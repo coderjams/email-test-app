@@ -12,8 +12,6 @@ export class EmailDialogComponent implements OnInit {
 
   emailService = inject(EmailService);
 
-  constructor() { }
-
   ngOnInit(): void {
     this.emailService.fetchEmails();
   }
