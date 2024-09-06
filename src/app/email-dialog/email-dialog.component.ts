@@ -1,5 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { EmailService } from './email.service';
+import { Email } from '../models/email.model.';
 
 @Component({
   selector: 'app-email-dialog',
@@ -9,10 +10,29 @@ import { EmailService } from './email.service';
   styleUrl: './email-dialog.component.css'
 })
 export class EmailDialogComponent implements OnInit {
+  emails = signal<Email[] | undefined>(undefined);
+  isFetching = signal<boolean>(false);
+  error = signal<string>('');
+  private emailService = inject(EmailService);
+  private destroyRef = inject(DestroyRef);
 
-  emailService = inject(EmailService);
-
-  ngOnInit(): void {
-    this.emailService.fetchEmails();
+  ngOnInit() {
+   const subscription =
+   this.emailService.loadEmailData()
+   .subscribe({
+      next: (emails) => {
+        this.emails.set(emails);
+      },
+      error: (error: Error) => {
+        this.error.set(error.message);
+      },
+      complete: () => {
+        this.isFetching.set(false);
+      }
+    });
+    this.destroyRef.onDestroy(() => {
+      subscription.unsubscribe();
+    })
+   }
   }
-}
+

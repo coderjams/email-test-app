@@ -20,9 +20,9 @@ app.get("/getemails", async (req, res) => {
 
   const fileContent = await fs.readFile("./data/getemails.json", "utf-8");
 
-  const emailDate = JSON.parse(fileContent);
+  const emailData = JSON.parse(fileContent);
 
-  res.status(200).json(emailDate);
+  res.status(200).json({ emails: emailData });
 });
 
 app.use((req, res, next) => {
