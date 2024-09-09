@@ -1,36 +1,43 @@
-<div class="backdrop"></div>
-<dialog open>
-  <header>
-    <h1>X</h1>
-  </header>
-  <form>
-    <p>
-      <label for="to">To</label>
-      <input type="text" id="to" name="to" />
-    </p>
-    <p>
-      <label for="to">Cc</label>
-      <input type="text" id="cc" name="cc" />
-    </p>
-    <p>
-      <label for="to">Subject</label>
-      <textarea type="text" id="Subject" name="Subject"></textarea>
-    </p>
-    <p>
-      <textarea type="text" class="email-body"></textarea>
-    </p>
-    <div class="footer">
-      <div>
-        <button type="submit">Send</button>
+@if (!closeDialog()) {
+  <!-- <div class="backdrop" (click)="onCloseDialog()"></div> -->
+  <dialog open>
+    <header>
+      <h1 (click)="onCloseDialog()">X</h1>
+    </header>
+    <form>
+      <p>
+        <label for="to">To</label>
+        <input type="text" id="to" name="to" />
+      </p>
+      <p>
+        <label for="to">Cc</label>
+        <input type="text" id="cc" name="cc" />
+      </p>
+      <p>
+        <label for="to">Subject</label>
+        <textarea type="text" id="Subject" name="Subject"></textarea>
+      </p>
+      <p>
+        <textarea type="text" class="email-body"></textarea>
+      </p>
+      <div class="footer">
+        <div>
+          <button type="submit">Send</button>
+        </div>
+        <div>
+          <label for="cars">Choose an email:</label>
+          <select name="userEmail" id="userEmail">
+            @for(email of emails(); track email.id) {
+              <option [value]="email.signature">{{email.signature}}</option>
+            }
+          </select>
+        </div>
       </div>
-      <div>
-        <label for="cars">Choose an email:</label>
-        <select name="userEmail" id="userEmail">
-          @for(email of emails(); track email.id) {
-            <option [value]="email.signature">{{email.signature}}</option>
-          }
-        </select>
-      </div>
-    </div>
-  </form>
-</dialog>
+    </form>
+  </dialog>
+}
+@if(closeDialog()) {
+  <div><button (click)="onOpenDialog()">Open</button></div>
+}
+
+
