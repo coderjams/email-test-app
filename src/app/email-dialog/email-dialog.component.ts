@@ -13,6 +13,7 @@ export class EmailDialogComponent implements OnInit {
   emails = signal<Email[] | undefined>(undefined);
   isFetching = signal<boolean>(false);
   error = signal<string>('');
+  closeDialog = signal(false);
   private emailService = inject(EmailService);
   private destroyRef = inject(DestroyRef);
 
@@ -33,6 +34,15 @@ export class EmailDialogComponent implements OnInit {
     this.destroyRef.onDestroy(() => {
       subscription.unsubscribe();
     })
+   }
+
+   onCloseDialog() {
+    this.closeDialog.set(true);
+    console.log(this.closeDialog())
+   }
+
+   onOpenDialog() {
+    this.closeDialog.set(false);
    }
   }
 
